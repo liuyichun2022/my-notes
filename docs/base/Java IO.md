@@ -42,7 +42,7 @@ public static void listAllFiles(File dir) {
 
 ### 实现文件复制
 
-```
+```java
 public static void copyFile(String src, String dist) throws IOException {
     FileInputStream in = new FileInputStream(src);
     FileOutputStream out = new FileOutputStream(dist);
