@@ -79,7 +79,7 @@ public static Integer valueOf(int i) {
 private static class IntegerCache {
     static final int low = -128;
     static final int high;
-    static final Integer cache[];
+    static final Integer[] cache;
 
     static {
         // high value may be configured by property
@@ -145,9 +145,9 @@ String 被声明为 final，因此它不可被继承。(Integer 等包装类也�
 
 ```java
 public final class String
-    implements java.io.Serializable, Comparable<String>, CharSequence {
+        implements java.io.Serializable, Comparable<String>, CharSequence {
     /** The value is used for character storage. */
-    private final char value[];
+    private final char[] value;
 }
 ```
 
