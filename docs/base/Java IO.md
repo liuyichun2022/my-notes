@@ -21,7 +21,7 @@ File 类可以用于表示文件和目录的信息，但是它不表示文件的
 
 递归地列出一个目录下所有文件：
 
-```
+```java
 public static void listAllFiles(File dir) {
     if (dir == null || !dir.exists()) {
         return;
@@ -158,7 +158,7 @@ public static void readFileContent(String filePath) throws IOException {
 
 序列化的类需要实现 Serializable 接口，它只是一个标准，没有任何方法需要实现，但是如果不去实现它的话而进行序列化，会抛出异常。
 
-```
+```java
 public static void main(String[] args) throws IOException, ClassNotFoundException {
 
     A a1 = new A(123, "abc");
@@ -223,7 +223,7 @@ InetAddress.getByAddress(byte[] address);
 
 可以直接从 URL 中读取字节流数据。
 
-```
+```java
 public static void main(String[] args) throws IOException {
 
     URL url = new URL("http://www.baidu.com");
@@ -489,7 +489,7 @@ while (true) {
 
 ### 套接字 NIO 实例
 
-```
+```java
 public class NIOServer {
 
     public static void main(String[] args) throws IOException {
