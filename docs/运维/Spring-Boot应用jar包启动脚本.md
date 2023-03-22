@@ -1,3 +1,8 @@
+SpringBoot 应用jar包方式启动脚本 
+
+restart.sh
+
+```bash
 #!/bin/bash
 #这里可替换为你自己的执行程序，其他代码无需更改
 APP_NAME=iota.jar
@@ -19,7 +24,7 @@ start(){
 	if [ $? -eq "0" ]; then
 		echo "${APP_NAME} is already running. pid=${pid} ."
 	else
-		nohup java -jar -server -Xms128m -Xmx128m -XX:SurvivorRatio=6 -XX:+UseG1GC -XX:MaxGCPauseMillis=40 -XX:InitiatingHeapOccupancyPercent=35 -XX:+DisableExplicitGC -Dspring.profiles.active=dev $APP_NAME>/data/log/iota.log 2>&1 &
+		nohup java -jar -server -Xms128m -Xmx128m -XX:SurvivorRatio=6 -XX:+UseG1GC -XX:MaxGCPauseMillis=40 -XX:InitiatingHeapOccupancyPercent=35 -XX:+DisableExplicitGC -Dspring.profiles.active=dev $APP_NAME>/data/log/pjicloud-iota.log 2>&1 &
 		echo "${APP_NAME} start success"
 	fi
 }
@@ -54,4 +59,5 @@ restart(){
 # 执行重启方法
 restart
 
+```
 
