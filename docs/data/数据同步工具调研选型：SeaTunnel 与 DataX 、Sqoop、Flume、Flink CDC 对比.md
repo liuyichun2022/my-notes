@@ -15,7 +15,7 @@ SeaTunnel 主要解决数据集成领域的常见问题：
 
 * **管理维护困难**：市面上的数据集成工具通常受限于不同的底层技术组件（Flink/Spark），使得离线同步和实时同步往往是分开开发和管理的，增加了管理和维护的难度。
 
-![SeaTunnel technical framework.png](SeaTunnel%20technical%20framework.png)
+![SeaTunnel technical framework.png](../imgs/data/SeaTunnel%20technical%20framework.png)
 SeaTunnel 产品实现了高可靠性、集中管理、可视化监控等一体的数据集成统一平台。
 
 平台可以实现了标准化、规范化、界面化操作；实现了数据同步高速化，全量到增量无锁化自动切换，目前已经支持 100+ 种数据源；支持整库同步、表结构自动变更；同时无中心化设计确保系统的高可用机制，整体上做到简单易用，开箱即用。
@@ -119,8 +119,8 @@ SeaTunnel Zeta 比 DataX 同步数据快 40-80% 左右。同时SeaTunnel Zeta �
 
 在云数据同步场景下：SeaTunnel 在 MySQL 到 S3 场景下性能是 Airbyte 的 30 多倍，是 AWS DMS 和 Glue 的 2 到 5 倍。
 
-![SeaTynnel&DataX.png](SeaTynnel%26DataX.png)
-![AirByte&SeaTunnel.png](AirByte%26SeaTunnel.png)
+![SeaTynnel&DataX.png](../imgs/data/SeaTynnel%26DataX.png)
+![AirByte&SeaTunnel.png](../imgs/data/AirByte%26SeaTunnel.png)
 
 这样的测试结果得益于 SeaTunnel Zeta 引擎专为数据同步场景而进行的精心化设计：
 
@@ -165,10 +165,12 @@ SeaTunnel 和 Flink CDC 提供了统一的批流一体框架：SeaTunnel 提供�
 * DataX 不支持精确一致性。
 
 * Flink CDC 支持 MySQL、PostgreSQL、Kakfa 等连接器的精确一致性。
-  SeaTunnel 的精确一致性实现得益于 SeaTunnel 的 Sink & Source API 的设计，对 MySQL 等数据库来说，SeaTunnel通过实现二阶段提交（Two-Phase Commit，2PC）来保证数据同步过程中的一致性。二阶段提交是一种分布式事务协议，用于在分布式系统中实现多个参与者的数据操作的一致性。
-![SeaTunnel 2PC.png](SeaTunnel%202PC.png)
-  通过以上的二阶段提交过程，SeaTunnel 能够确保在数据同步过程中的一致性。SeaTunnel 实现了分布式环境下的数据操作的原子性和一致性。在正常情况下，所有参与者都成功执行了数据操作并提交数据，而在异常情况下，参与者能够回滚之前的数据操作，确保数据的一致性。这种机制使得 SeaTunnel 能够在分布式数据同步中提供可靠的数据一致性保证。其 Sink API 如下：
-![SinkCoreApi.png](SinkCoreApi.png)
+
+SeaTunnel 的精确一致性实现得益于 SeaTunnel 的 Sink & Source API 的设计，对 MySQL 等数据库来说，SeaTunnel通过实现二阶段提交（Two-Phase Commit，2PC）来保证数据同步过程中的一致性。二阶段提交是一种分布式事务协议，用于在分布式系统中实现多个参与者的数据操作的一致性。
+![SeaTunnel 2PC.png](../imgs/data/SeaTunnel%202PC.png)
+  
+通过以上的二阶段提交过程，SeaTunnel 能够确保在数据同步过程中的一致性。SeaTunnel 实现了分布式环境下的数据操作的原子性和一致性。在正常情况下，所有参与者都成功执行了数据操作并提交数据，而在异常情况下，参与者能够回滚之前的数据操作，确保数据的一致性。这种机制使得 SeaTunnel 能够在分布式数据同步中提供可靠的数据一致性保证。其 Sink API 如下：
+![SinkCoreApi.png](../imgs/data/SinkCoreApi.png)
 
 ### 2.17、可扩展性
 * Apache SeaTunnel、DataX 和 Flink CDC 都具有易扩展性，并支持插件机制。
@@ -192,8 +194,8 @@ Apache SeaTunnel 正在实现中，可以通过拖拉拽完成操作。
 DataX 和 Flink CDC 没有 Web UI。
 
 SeaTunnel 提供了如下的可视化操作界面，让用户开箱即用：
-![SeaTunnelWeb.png](SeaTunnelWeb.png)
-![SeaTunnelWeb2.png](SeaTunnelWeb2.png)
+![SeaTunnelWeb.png](../imgs/data/SeaTunnelWeb.png)
+![SeaTunnelWeb2.png](../imgs/data/SeaTunnelWeb2.png)
 
 ### 2.20、社区
 * Apache SeaTunnel 和 Flink CDC 社区非常活跃。
@@ -203,7 +205,7 @@ SeaTunnel 的活跃社区和强大生态系统也是其成功的关键。作为�
 
 特别的，我们 Flink CDC，SeaTunnel Zeta 引擎的优势对比如下：
 
-![SeaTunnel&Fink Engine.png](SeaTunnel%26Fink%20Engine.png)
+![SeaTunnel&Fink Engine.png](../imgs/data/SeaTunnel%26Fink%20Engine.png)
 
 Flink 是非常优秀的流计算引擎，Zeta 是我们专为数据同步这个场景打造的，更适合于高性能数据同步这个场景！
 
