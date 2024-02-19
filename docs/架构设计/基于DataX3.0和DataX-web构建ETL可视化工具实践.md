@@ -82,8 +82,93 @@ DataX Web是在DataX之上开发的分布式数据同步工具，提供简单易
 作者github文档描述非常清楚了，需要了解整体的功能架构，然后按照操作文档的步骤执行，真实的踩坑了才更容易理解。
 #### 2.3.1 安装部署DataX
 这边介绍两种方式一个是python脚本执行的方式，一种是spring 集成datax的方式。
-（1）python的方式不做详细的展开了，datax官网也是这种方式，准备python运行环境，下载datax安装包，验证
+
+（1）python的方式不做详细的展开了，datax官网也是这种方式，准备python运行环境，下载datax安装包，验证 
+
 （2）java Spring 集成datax的方式
+
+详细步骤
+
+1 、 安装依赖
+> (1) 拷贝datax-core-0.0.1-SNAPSHOT.jar和datax-common-0.0.1-SNAPSHOT.jar到本地 ${pom.basedir}/src/ex.lib/下面
+> (2) pom 文件依赖
+> (3) 本地jar依赖插件配置
+
+```pom
+        <!-- datax核心依赖datax-core-0.0.1-SNAPSHOT.jar 和 datax-common-0.0.1-SNAPSHOT.jar -->
+        <!-- 因为没有上传到本地仓库，我这边是直接放到项目里面的 -->
+        <dependency>
+            <groupId>com.datax</groupId>
+            <artifactId>datax-core</artifactId>
+            <version>0.0.1</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/src/ex.lib/datax-core-0.0.1-SNAPSHOT.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.datax</groupId>
+            <artifactId>datax-common</artifactId>
+            <version>0.0.1</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/src/ex.lib/datax-common-0.0.1-SNAPSHOT.jar</systemPath>
+        </dependency>
+        
+        <!-- datax引擎基础包依赖的版本，不然执行的时候报错 -->
+        <dependency>
+            <groupId>commons-cli</groupId>
+            <artifactId>commons-cli</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.60</version>
+        </dependency>
+        
+       <!-- 本地jar依赖插件配置 -->
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.5.0</version>
+                <configuration>
+                    <includeSystemScope>true</includeSystemScope>
+                </configuration>
+            </plugin>
+        <plugins>
+```
+
+2、下载datax到本地资源目录
+![datax-resource.png](..%2Fimgs%2Farchitecture-design%2Fdatax-resource.png)
+
+3、改造datax-web源码
+![datax-web-source-mod.png](..%2Fimgs%2Farchitecture-design%2Fdatax-web-source-mod.png)
+
+4、本地源编译datax-web源码，验证同步流程mysql->mysql, 步骤参考官网比较简单不赘述了
+![datax-web-result.png](..%2Fimgs%2Farchitecture-design%2Fdatax-web-result.png)
+
+
+
+
 
 
 
