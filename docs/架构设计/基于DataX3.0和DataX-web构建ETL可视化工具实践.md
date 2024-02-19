@@ -66,3 +66,29 @@ DataX 3.0 开源版本支持单机多线程模式完成同步作业运行，本�
 DataXJob根据分库分表切分成了100个Task。
 根据20个并发，DataX计算共需要分配4个TaskGroup。
 4个TaskGroup平分切分好的100个Task，每一个TaskGroup负责以5个并发共计运行25个Task
+
+## DataXWeb简介
+https://gitee.com/WeiYe-Jing/datax-web  不过这个项目作者目前好像不维护了，活跃度比较低，了解其原理和思想还是可以作为二次开发的基础。
+
+### 2.1 DataXWeb是什么？
+DataX Web是在DataX之上开发的分布式数据同步工具，提供简单易用的 操作界面，降低用户使用DataX的学习成本，缩短任务配置时间，避免配置过程中出错。用户可通过页面选择数据源即可创建数据同步任务，支持RDBMS、Hive、HBase、ClickHouse、MongoDB等数据源，RDBMS数据源可批量创建数据同步任务，支持实时查看数据同步进度及日志并提供终止同步功能，集成并二次开发xxl-job可根据时间、自增主键增量同步数据。
+
+任务"执行器"支持集群部署，支持执行器多节点路由策略选择，支持超时控制、失败重试、失败告警、任务依赖，执行器CPU.内存.负载的监控等等。后续还将提供更多的数据源支持、数据转换UDF、表结构同步、数据同步血缘等更为复杂的业务场景。
+
+### 2.2 DataXWeb架构
+![datax-web-design.png](..%2Fimgs%2Farchitecture-design%2Fdatax-web-design.png)
+
+### 2.3 DataXWeb 安装部署
+作者github文档描述非常清楚了，需要了解整体的功能架构，然后按照操作文档的步骤执行，真实的踩坑了才更容易理解。
+#### 2.3.1 安装部署DataX
+这边介绍两种方式一个是python脚本执行的方式，一种是spring 集成datax的方式。
+（1）python的方式不做详细的展开了，datax官网也是这种方式，准备python运行环境，下载datax安装包，验证
+（2）java Spring 集成datax的方式
+
+
+
+
+
+
+
+
