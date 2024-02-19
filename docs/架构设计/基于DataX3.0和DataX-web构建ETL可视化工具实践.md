@@ -78,4 +78,17 @@ DataX Web是在DataX之上开发的分布式数据同步工具，提供简单易
 ### 2.2 DataXWeb架构
 ![datax-web-design.png](..%2Fimgs%2Farchitecture-design%2Fdatax-web-design.png)
 
-### DataXWeb 安装部署
+### 2.3 DataXWeb 安装部署
+作者github文档描述非常清楚了，需要了解整体的功能架构，然后按照操作文档的步骤执行，真实的踩坑了才更容易理解。
+#### 2.3.1 安装部署DataX
+这边介绍两种方式一个是python脚本执行的方式，一种是spring 集成datax的方式。
+（1）python的方式不做详细的展开了，datax官网也是这种方式，准备python运行环境，下载datax安装包，验证
+（2）java Spring 集成datax的方式
+
+
+
+
+
+
+
+
