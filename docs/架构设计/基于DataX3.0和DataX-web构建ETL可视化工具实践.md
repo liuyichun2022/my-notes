@@ -68,7 +68,7 @@ DataXJob根据分库分表切分成了100个Task。
 4个TaskGroup平分切分好的100个Task，每一个TaskGroup负责以5个并发共计运行25个Task
 
 ## DataXWeb简介
-https://gitee.com/WeiYe-Jing/datax-web  不过这个项目作者目前好像不维护了，活跃度比较低，了解其原理和思想作为二次开发的基础也比较友好。
+https://gitee.com/WeiYe-Jing/datax-web  不过这个项目作者目前好像不维护了，活跃度比较低，了解其原理和思想还是可以作为二次开发的基础。
 
 ### 2.1 DataXWeb是什么？
 DataX Web是在DataX之上开发的分布式数据同步工具，提供简单易用的 操作界面，降低用户使用DataX的学习成本，缩短任务配置时间，避免配置过程中出错。用户可通过页面选择数据源即可创建数据同步任务，支持RDBMS、Hive、HBase、ClickHouse、MongoDB等数据源，RDBMS数据源可批量创建数据同步任务，支持实时查看数据同步进度及日志并提供终止同步功能，集成并二次开发xxl-job可根据时间、自增主键增量同步数据。
